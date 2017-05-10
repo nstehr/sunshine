@@ -47,7 +47,7 @@ func main() {
 
 	allEmployees := make(map[string][]model.Position)
 
-	//set up a goroutine that will listen a store employees in a map
+	//set up a goroutine that will listen and store employees in a map
 	//we should probably write to mongo directly instead of updating
 	//a huge map and writing the map all at once
 	out := make(chan model.Employee)
@@ -70,7 +70,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//go through are input data and parse out data
+	//go through our input data and parse out data
 	//our input is setup as a list of links to parse the
 	//data out of, and list is keyed by year
 	for _, v := range employees {
